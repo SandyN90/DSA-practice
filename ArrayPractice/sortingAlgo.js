@@ -3,7 +3,7 @@
 // Bubble sort- As name suggest that any of the largest value will be bubbled to last index of the array
 // As in bubble sort time complexity of the array for worst case is bigO of n2
 
-const arr = [2, 3, 1, 8, 10, 5, 7, 4];
+const data = [2, 3, 1, 8, 10, 5, 7, 4];
 
 const bubbleSort = (arrayValue) => {
     for (let i = 0; i < arrayValue.length; i++) {
@@ -20,12 +20,11 @@ const bubbleSort = (arrayValue) => {
     return arrayValue;
 }
 
-console.log(bubbleSort(arr));
+console.log(bubbleSort(data));
 
 // ---------------------- selection sort ------------------------
 
 
-const data = [6, 3, 4, 2, 5, 8, 1, 9, 7];
 
 // selection sorting
 // here we can find individual smallest element in every path and replace it with from intial index of the array
@@ -45,5 +44,34 @@ const selectionSort = (arr) => {
 };
 
 console.log(selectionSort(data));
+
+// insertion sort
+// Here any array will be sorted as current index element compare with previous one and swapped till current index element swapped to that index where no value 
+// is greater than its left index.
+
+let count = 0;
+const insertionSort = (arr) => {
+    for (let i = 1; i < arr.length; i++) {
+        // for (let j = i; j >= 0; j--) {
+        //   console.log(count++);
+
+        //   if (arr[j] < arr[j - 1]) {
+        //     let temp = arr[j - 1];
+        //     arr[j - 1] = arr[j];
+        //     arr[j] = temp;
+        //   }
+        // }
+        let j = i;
+        while (j > 0 && arr[j] < arr[j - 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            j--;
+        }
+    }
+    return arr;
+};
+
+console.log(insertionSort(data));
 
 
