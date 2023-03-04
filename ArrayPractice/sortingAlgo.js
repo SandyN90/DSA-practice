@@ -7,12 +7,10 @@ const arr = [2, 3, 1, 8, 10, 5, 7, 4];
 
 const bubbleSort = (arrayValue) => {
     for (let i = 0; i < arrayValue.length; i++) {
-        console.log("🚀 ~ file: sortingAlgo.js:11 ~ temp:")
 
         for (let j = 0; j < arrayValue.length - 1; j++) {
             if (arrayValue[j] > arrayValue[j + 1]) {
                 let temp = arrayValue[j];
-                console.log("🚀 ~ file: sortingAlgo.js:11 ~ temp:", temp)
                 arrayValue[j] = arrayValue[j + 1];
                 arrayValue[j + 1] = temp;
             }
@@ -27,9 +25,25 @@ console.log(bubbleSort(arr));
 // ---------------------- selection sort ------------------------
 
 
-// const selectionSort = (unsortedArray) => {
-//     for (let i = 0; i < unsortedArray.length; i++) {
+const data = [6, 3, 4, 2, 5, 8, 1, 9, 7];
 
-//     }
-// }
+// selection sorting
+// here we can find individual smallest element in every path and replace it with from intial index of the array
+
+const selectionSort = (arr) => {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let min = arr[i];
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+};
+
+console.log(selectionSort(data));
+
 
